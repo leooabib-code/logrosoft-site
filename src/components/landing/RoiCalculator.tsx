@@ -83,7 +83,7 @@ export function RoiCalculator() {
                   min={10}
                   max={400}
                   step={5}
-                  onValueChange={([v]) => setVendasDia(v)}
+                  onValueChange={(v) => setVendasDia(v[0] ?? vendasDia)}
                   aria-label="Vendas estimadas por dia"
                 />
               </div>
@@ -101,7 +101,7 @@ export function RoiCalculator() {
                   min={1}
                   max={30}
                   step={1}
-                  onValueChange={([v]) => setDiasMes(v)}
+                  onValueChange={(v) => setDiasMes(v[0] ?? diasMes)}
                   aria-label="Dias trabalhados no mês"
                 />
               </div>
