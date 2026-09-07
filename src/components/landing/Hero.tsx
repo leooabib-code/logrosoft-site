@@ -51,13 +51,13 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="rounded-xl bg-primary-foreground/95 p-4 shadow-card">
+        <div className="rounded-xl bg-white p-4 sm:p-6 shadow-card">
           <img
             src={maquinaHero}
             alt="Máquina industrial de sorvete expresso Logrosoft em aço inox"
             width={1200}
             height={1200}
-            className="mx-auto h-auto w-full max-w-md rounded-lg object-cover"
+            className="mx-auto h-auto w-full max-w-md mix-blend-multiply"
           />
         </div>
       </div>

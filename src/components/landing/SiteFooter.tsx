@@ -1,21 +1,10 @@
 import { Mail, BadgeCheck } from "lucide-react";
-import logoAsset from "@/assets/logrosoft-logo.png.asset.json";
-
 export function SiteFooter() {
   return (
     <footer className="surface-navy">
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <a href="#topo" className="inline-block">
-              <img
-                src={logoAsset.url}
-                alt="Logrosoft Máquinas e Produtos para Sorvete"
-                className="h-12 w-auto max-w-[190px] object-contain"
-                width={190}
-                height={48}
-              />
-            </a>
             <p className="mt-4 text-sm text-primary-foreground/70">
               Logrosoft Máquinas Expressas Ltda.
               <br />

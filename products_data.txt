@@ -1,0 +1,1 @@
+[{slug:`lsd-d300`,nome:`LSD D300`,preco:`R$ 14.990,00`,precoNum:14990,tag:`Compacta`,descricao:`Ideal para pequenos negócios que buscam performance e baixo custo.`,destaques:[`3 sabores (2 puros + 1 misto)`,`Produção ~18 L/h`,`Bancada compacta`,`Controle digital`]

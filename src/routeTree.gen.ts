@@ -10,7 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AcessoriosRouteImport } from './routes/acessorios'
+import { Route as DepoimentosRouteImport } from './routes/depoimentos'
+import { Route as DicasRouteImport } from './routes/dicas'
+import { Route as HistoriaDoSorveteRouteImport } from './routes/historia-do-sorvete'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as ProdutosRouteImport } from './routes/produtos'
 import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,9 +23,34 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcessoriosRoute = AcessoriosRouteImport.update({
+  id: '/acessorios',
+  path: '/acessorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepoimentosRoute = DepoimentosRouteImport.update({
+  id: '/depoimentos',
+  path: '/depoimentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DicasRoute = DicasRouteImport.update({
+  id: '/dicas',
+  path: '/dicas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoriaDoSorveteRoute = HistoriaDoSorveteRouteImport.update({
+  id: '/historia-do-sorvete',
+  path: '/historia-do-sorvete',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   id: '/politica-de-privacidade',
   path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutosRoute = ProdutosRouteImport.update({
+  id: '/produtos',
+  path: '/produtos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
@@ -31,31 +61,76 @@ const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/dicas': typeof DicasRoute
+  '/historia-do-sorvete': typeof HistoriaDoSorveteRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/produtos': typeof ProdutosRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/dicas': typeof DicasRoute
+  '/historia-do-sorvete': typeof HistoriaDoSorveteRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/produtos': typeof ProdutosRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acessorios': typeof AcessoriosRoute
+  '/depoimentos': typeof DepoimentosRoute
+  '/dicas': typeof DicasRoute
+  '/historia-do-sorvete': typeof HistoriaDoSorveteRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/produtos': typeof ProdutosRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/politica-de-privacidade' | '/termos-de-uso'
+  fullPaths:
+    | '/'
+    | '/acessorios'
+    | '/depoimentos'
+    | '/dicas'
+    | '/historia-do-sorvete'
+    | '/politica-de-privacidade'
+    | '/produtos'
+    | '/termos-de-uso'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/politica-de-privacidade' | '/termos-de-uso'
-  id: '__root__' | '/' | '/politica-de-privacidade' | '/termos-de-uso'
+  to:
+    | '/'
+    | '/acessorios'
+    | '/depoimentos'
+    | '/dicas'
+    | '/historia-do-sorvete'
+    | '/politica-de-privacidade'
+    | '/produtos'
+    | '/termos-de-uso'
+  id:
+    | '__root__'
+    | '/'
+    | '/acessorios'
+    | '/depoimentos'
+    | '/dicas'
+    | '/historia-do-sorvete'
+    | '/politica-de-privacidade'
+    | '/produtos'
+    | '/termos-de-uso'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcessoriosRoute: typeof AcessoriosRoute
+  DepoimentosRoute: typeof DepoimentosRoute
+  DicasRoute: typeof DicasRoute
+  HistoriaDoSorveteRoute: typeof HistoriaDoSorveteRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  ProdutosRoute: typeof ProdutosRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
 }
 
@@ -68,11 +143,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/acessorios': {
+      id: '/acessorios'
+      path: '/acessorios'
+      fullPath: '/acessorios'
+      preLoaderRoute: typeof AcessoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/depoimentos': {
+      id: '/depoimentos'
+      path: '/depoimentos'
+      fullPath: '/depoimentos'
+      preLoaderRoute: typeof DepoimentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dicas': {
+      id: '/dicas'
+      path: '/dicas'
+      fullPath: '/dicas'
+      preLoaderRoute: typeof DicasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historia-do-sorvete': {
+      id: '/historia-do-sorvete'
+      path: '/historia-do-sorvete'
+      fullPath: '/historia-do-sorvete'
+      preLoaderRoute: typeof HistoriaDoSorveteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-de-privacidade': {
       id: '/politica-de-privacidade'
       path: '/politica-de-privacidade'
       fullPath: '/politica-de-privacidade'
       preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produtos': {
+      id: '/produtos'
+      path: '/produtos'
+      fullPath: '/produtos'
+      preLoaderRoute: typeof ProdutosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/termos-de-uso': {
@@ -87,7 +197,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcessoriosRoute: AcessoriosRoute,
+  DepoimentosRoute: DepoimentosRoute,
+  DicasRoute: DicasRoute,
+  HistoriaDoSorveteRoute: HistoriaDoSorveteRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  ProdutosRoute: ProdutosRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,
 }
 export const routeTree = rootRouteImport

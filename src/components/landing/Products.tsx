@@ -1,118 +1,141 @@
-import { Check, Zap, ShieldCheck, Blend, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { MessageCircle, ShieldCheck, Blend, Zap, ChevronRight, Hand, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { WHATSAPP_URL } from "./config";
 
-const modelos = [
+const maquinas = [
   {
     nome: "LSD D300",
-    perfil: "Alta demanda",
-    destaque: "Produção: até 400 casquinhas por hora",
-    itens: [
-      "3 sabores (2 puros + 1 misto)",
-      "Refrigeração na cuba: o produto não derrete em fila de pico",
-      "Isolamento térmico premium: menos consumo de energia",
-    ],
+    preco: "R$ 14.990,00",
+    descricao: "Ideal para pequenos negócios que buscam performance e baixo custo.",
+    imagem: "/products/lsd-d300.webp",
   },
   {
-    nome: "LSD 510 Balcão",
-    perfil: "Pouco espaço",
-    destaque: "Produção: até 250 casquinhas por hora",
-    itens: [
-      "Modelo de bancada, cabe em balcões a partir de 50 cm",
-      "2 sabores isolados para açaí e sorvete sem misturar",
-      "Ideal para padarias, cafeterias e lojas de conveniência",
-    ],
+    nome: "LSD D500 Balcão",
+    preco: "R$ 15.490,00",
+    descricao: "Mais produtividade e recursos avançados para o seu negócio crescer.",
+    imagem: "/products/lsd-d500.webp",
   },
   {
-    nome: "LSCF 8240",
-    perfil: "Operação intensiva",
-    destaque: "Produção: até 600 casquinhas por hora",
-    itens: [
-      "Compressor reforçado para operação contínua",
-      "Cuba refrigerada 24h: zero desperdício ao fim do dia",
-      "Painel digital com controle de consistência",
-    ],
+    nome: "LSD D510 Balcão",
+    preco: "R$ 17.990,00",
+    descricao: "Mais rendimento com injetora de ar e conservação inteligente para ampliar o potencial da operação.",
+    imagem: "/products/lsd-d510.webp",
+  },
+  {
+    nome: "LS D530",
+    preco: "R$ 21.490,00",
+    descricao: "A máquina de balcão com maior produtividade.",
+    imagem: "/products/ls-d530.webp",
+  },
+  {
+    nome: "LSD 425",
+    preco: "R$ 22.490,00",
+    descricao: "A queridinha e mais vendida! Melhor custo-benefício para movimento médio.",
+    imagem: "/products/lsd-425.webp",
+  },
+  {
+    nome: "LS 125C",
+    preco: "R$ 31.990,00",
+    descricao: "Ótima produção com custo benefício e overrun.",
+    imagem: "/products/ls-125c.webp",
   },
 ];
 
-const acessorios = [
-  {
-    icon: ShieldCheck,
-    titulo: "Estabilizador de Energia 5KVA",
-    texto:
-      "Protege o compressor contra as oscilações da rede elétrica brasileira e preserva a garantia do equipamento.",
-  },
-  {
-    icon: Blend,
-    titulo: "Batedor de Milkshake profissional",
-    texto:
-      "Transforma o mesmo sorvete em milkshake de ticket médio maior, sem custo extra de matéria-prima.",
-  },
-  {
-    icon: Zap,
-    titulo: "Kit de partida operacional",
-    texto: "Casquinhas, copos, mix base e treinamento de operação para vender já no primeiro dia.",
-  },
-];
+
 
 export function Products() {
   return (
-    <section id="produtos" className="bg-background py-14 sm:py-20">
+    <section id="produtos" className="bg-slate-50 py-14 sm:py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="max-w-3xl text-2xl font-extrabold text-primary sm:text-4xl">
-          Máquinas industriais preparadas para o volume do seu negócio
+        <h2 className="text-center font-display text-3xl font-extrabold text-[#0a2540] sm:text-4xl">
+          Nossas Máquinas
         </h2>
-        <p className="mt-3 max-w-2xl text-base text-muted-foreground">
-          Todos os modelos contam com isolamento térmico premium e refrigeração na cuba, mantendo o
-          produto na textura certa do primeiro ao último atendimento.
+        <p className="mt-3 text-center text-base text-muted-foreground">
+          Encontre o equipamento ideal para a demanda do seu negócio.
         </p>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {modelos.map((m) => (
-            <article
-              key={m.nome}
-              className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-card"
-            >
-              <span className="w-fit rounded-md bg-accent px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-accent-foreground">
-                {m.perfil}
-              </span>
-              <h3 className="mt-4 font-display text-2xl font-extrabold text-primary">{m.nome}</h3>
-              <p className="mt-2 font-semibold text-cta">{m.destaque}</p>
-              <ul className="mt-4 flex-1 space-y-3 text-sm text-muted-foreground">
-                {m.itens.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button asChild variant="cta" className="mt-6 h-11 w-full">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle aria-hidden="true" />
-                  Ver preço e condições
-                </a>
-              </Button>
-            </article>
-          ))}
+        {/* Indicador de Swipe para Mobile */}
+        <div className="mt-6 flex items-center justify-center gap-2 text-sm font-semibold text-[#0066cc] md:hidden animate-pulse">
+          <Hand className="h-5 w-5" />
+          <span>Arraste para ver mais</span>
+          <ArrowRight className="h-4 w-4" />
         </div>
 
-        <div className="mt-12 rounded-xl border border-border bg-secondary p-6 sm:p-8">
-          <h3 className="text-xl font-extrabold text-primary sm:text-2xl">Acessórios essenciais</h3>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Itens que protegem o investimento e aumentam o faturamento da mesma máquina.
-          </p>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {acessorios.map(({ icon: Icon, titulo, texto }) => (
-              <div key={titulo} className="rounded-lg border border-border bg-card p-5">
-                <span className="grid h-10 w-10 place-items-center rounded-md bg-primary text-primary-foreground">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <h4 className="mt-4 text-base font-bold text-primary">{titulo}</h4>
-                <p className="mt-2 text-sm text-muted-foreground">{texto}</p>
-              </div>
-            ))}
-          </div>
+        <div className="mt-12 relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {maquinas.map((m) => (
+                <CarouselItem key={m.nome} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="group relative flex h-full flex-col items-center rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                    {/* Watermark Logo */}
+                    <img
+                      src="/logo.png"
+                      alt="Logrosoft"
+                      className="absolute right-4 top-4 h-8 w-auto opacity-90 object-contain"
+                    />
+                    
+                    {/* Imagem */}
+                    <div className="mt-4 flex h-60 w-full items-center justify-center p-2">
+                      <img
+                        src={m.imagem}
+                        alt={m.nome}
+                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+
+                    {/* Conteúdo */}
+                    <div className="mt-6 flex flex-1 flex-col items-center text-center">
+                      <h3 className="font-display text-[22px] font-bold text-[#0a2540]">
+                        {m.nome}
+                      </h3>
+                      <p className="mt-1 text-3xl font-extrabold text-[#0066cc]">
+                        {m.preco}
+                      </p>
+                      
+                      <Link 
+                        to="/produtos"
+                        className="mt-5 text-sm font-semibold text-[#F97316] hover:text-orange-600 transition-colors underline underline-offset-4"
+                      >
+                        Veja essa máquina funcionando
+                      </Link>
+                      
+                      <div className="mt-auto pt-6">
+                        <a 
+                          href={WHATSAPP_URL} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[15px] font-semibold text-[#0066cc] hover:text-[#0052a3] transition-colors"
+                        >
+                          Saiba mais <ChevronRight className="h-4 w-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-12 h-12 w-12 border-none bg-white shadow-md hover:bg-slate-50" />
+              <CarouselNext className="-right-12 h-12 w-12 border-none bg-white shadow-md hover:bg-slate-50" />
+            </div>
+          </Carousel>
         </div>
+
+
       </div>
     </section>
   );
