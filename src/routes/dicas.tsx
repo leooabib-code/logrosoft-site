@@ -14,7 +14,7 @@ export const Route = createFileRoute("/dicas")({
 });
 
 const destaques = [
-  "Logrosoft há mais de 18 anos",
+  "No mercado há 18 anos",
   "Garantia de 1 ano",
   "Frete grátis",
   "Homologada em mais de 70 redes (dentre as quais Giraffas, Jah açaí, Cacau show)",
