@@ -45,7 +45,7 @@ export function Hero() {
             <Button asChild variant="outlineLight" size="xl" className="w-full sm:w-auto">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle aria-hidden="true" />
-                Falar com Consultor
+                Fale Conosco
               </a>
             </Button>
           </div>
