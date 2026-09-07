@@ -1,4 +1,4 @@
-import { BadgeCheck, Calculator, MessageCircle } from "lucide-react";
+import { BadgeCheck, Calculator, MessageCircle, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import maquinaHero from "@/assets/maquina-hero.jpg";
 import { WHATSAPP_URL } from "./config";
@@ -10,10 +10,16 @@ export function Hero() {
     <section id="topo" className="surface-navy">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 lg:grid-cols-2 lg:py-20">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
-            <BadgeCheck className="h-4 w-4 shrink-0" aria-hidden="true" />
-            Produto Oficial com Certificação do Inmetro
-          </span>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+              <BadgeCheck className="h-4 w-4 shrink-0" aria-hidden="true" />
+              Produto Oficial com Certificação do Inmetro
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-semibold text-slate-800 shadow-sm tracking-wide">
+              <CheckCircle className="h-4 w-4 shrink-0 text-green-500" aria-hidden="true" />
+              Logrosoft há mais de 18 anos
+            </span>
+          </div>
 
           <h1 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
             Conquiste sua liberdade financeira com a Logrosoft: rendimentos de{" "}
