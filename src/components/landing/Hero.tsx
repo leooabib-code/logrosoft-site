@@ -1,6 +1,5 @@
 import { BadgeCheck, Calculator, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import maquinaHero from "@/assets/maquina-hero.jpg";
 import { WHATSAPP_URL } from "./config";
 
 const fontesDeLucro = ["Sorvete", "Açaí", "Milkshake", "Frozen"];
@@ -17,7 +16,7 @@ export function Hero() {
 
           <h1 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
             Conquiste sua liberdade financeira com a Logrosoft: rendimentos de{" "}
-            <span className="text-cta">R$ 2.000 a R$ 5.000 mensais</span> com o seu próprio negócio
+            <span className="text-cta">R$ 5.000 a R$ 30.000 mensais</span> com o seu próprio negócio
           </h1>
 
           <h2 className="mt-5 text-lg font-semibold text-primary-foreground/85 sm:text-xl">
@@ -53,11 +52,11 @@ export function Hero() {
 
         <div className="rounded-xl bg-white p-4 sm:p-6 shadow-card">
           <img
-            src={maquinaHero}
+            src="/products/lsd-d510.webp"
             alt="Máquina industrial de sorvete expresso Logrosoft em aço inox"
             width={1200}
             height={1200}
-            className="mx-auto h-auto w-full max-w-md mix-blend-multiply"
+            className="mx-auto h-auto w-full max-w-sm mix-blend-multiply"
           />
         </div>
       </div>

@@ -10,7 +10,7 @@ const CUSTO_PRODUCAO = 1.2;
 
 export function RoiCalculator() {
   const [preco, setPreco] = useState(5);
-  const [vendasDia, setVendasDia] = useState(60);
+  const [vendasDia, setVendasDia] = useState(150);
   const [diasMes, setDiasMes] = useState(26);
 
   const { margem, lucroMes, faturamento } = useMemo(() => {

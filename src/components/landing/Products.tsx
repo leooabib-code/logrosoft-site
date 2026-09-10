@@ -106,22 +106,21 @@ export function Products() {
                         {m.preco}
                       </p>
                       
-                      <Link 
-                        to="/produtos"
-                        className="mt-5 text-sm font-semibold text-[#F97316] hover:text-orange-600 transition-colors underline underline-offset-4"
-                      >
-                        Veja essa máquina funcionando
-                      </Link>
+                      {/* Espaço para o vídeo da máquina funcionando */}
+                      <div className="mt-5 w-full h-44 bg-slate-100 rounded-md border border-slate-200 flex flex-col items-center justify-center text-slate-400">
+                        <div className="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center mb-2">
+                           <span className="text-sm ml-1">▶</span>
+                        </div>
+                        <span className="text-[11px] font-semibold uppercase tracking-wider">Espaço para Vídeo</span>
+                      </div>
                       
                       <div className="mt-auto pt-6">
-                        <a 
-                          href={WHATSAPP_URL} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
+                        <Link 
+                          to="/produtos"
                           className="inline-flex items-center gap-1 text-[15px] font-semibold text-[#0066cc] hover:text-[#0052a3] transition-colors"
                         >
                           Saiba mais <ChevronRight className="h-4 w-4" />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

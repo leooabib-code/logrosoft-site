@@ -13,7 +13,7 @@ O site deve ser construído em formato Single Page Application (Landing Page lon
 - Header limpo com a logo "Logrosoft" e um botão flutuante/persistente de WhatsApp ("Fale com um Consultor").
 
 2. HERO SECTION (A Dobra Principal de Conversão):
-- Título/Copy focado em transformação financeira (H1): "Conquiste sua liberdade financeira com a Logrosoft: Rendimentos de R$ 2.000 a R$ 5.000 mensais com o seu próprio negócio!"
+- Título/Copy focado em transformação financeira (H1): "Conquiste sua liberdade financeira com a Logrosoft: Rendimentos de R$ 5.000 a R$ 30.000 mensais com o seu próprio negócio!"
 - Subtítulo evidenciando a versatilidade (H2): "Uma única máquina. Quatro fontes de lucro: SORVETE - AÇAÍ - MILKSHAKE - FROZEN."
 - Selo de Autoridade visível: "Produto Oficial com Certificação do Inmetro".
 - Botão CTA Grande: "Quero Simular Meu Lucro" (ancora para a calculadora) ou "Falar com Consultor".

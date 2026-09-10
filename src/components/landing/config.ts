@@ -1,5 +1,5 @@
 export const WHATSAPP_URL =
-  "https://wa.me/5500000000000?text=" +
+  "https://wa.me/5511950741652?text=" +
   encodeURIComponent("Olá! Quero informações sobre as máquinas Logrosoft.");
 
 export const brl = (value: number) =>
